@@ -1,0 +1,28 @@
+sms-flask/
+├── app/
+│   ├── __init__.py          # création de l’app Flask
+│   ├── config.py            # paramètres (dev / prod)
+│   ├── models.py            # ORM SQLAlchemy
+│   ├── forms.py             # WTForms
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── auth.py          # login / logout
+│   │   ├── sms.py           # interface d’envoi de SMS
+│   │   └── api.py           # API REST pour envoyer un SMS
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── login.html
+│   │   ├── dashboard.html
+│   │   └── send_sms.html
+│   └── static/
+│       └── css/
+│           └── style.css
+├── tests/
+│   ├── conftest.py          # fixture PyTest
+│   ├── test_auth.py
+│   └── test_sms.py
+├── migrations/              # Alembic
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md

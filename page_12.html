@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Envoyer un SMS</h1>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.to_number.label }}<br>
+    {{ form.to_number(size=20) }}
+  </p>
+  <p>
+    {{ form.message.label }}<br>
+    {{ form.message(rows=4, cols=50) }}
+  </p>
+  <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
