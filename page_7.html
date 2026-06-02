@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Flask Example{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('main.index') }}">Flask Example</a></h1>
+        <nav>
+            <a href="{{ url_for('main.index') }}">Accueil</a>
+            <a href="{{ url_for('main.item_list') }}">Liste d'items</a>
+            <a href="{{ url_for('main.item_create') }}">Nouvel item</a>
+        </nav>
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flash-messages">
+              {% for category, msg in messages %}
+                <li class="{{ category }}">{{ msg }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ 2025 }} Flask Example</p>
+    </footer>
+</body>
+</html>

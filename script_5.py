@@ -1,3 +1,11 @@
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# app/forms.py
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, SubmitFieldfrom wtforms.validators import DataRequired, Length
+
+class ItemForm(FlaskForm):
+    name = StringField(
+        "Nom",
+        validators=[DataRequired(), Length(max=80)]
+    )
+    description = TextAreaField("Description")
+    submit = SubmitField("Enregistrer")

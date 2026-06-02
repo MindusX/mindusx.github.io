@@ -1,0 +1,3 @@
+> Si vous n’avez pas de migrations, la méthode `db.create_all()` dans `app/__init__.py` crée automatiquement la base au premier démarrage.
+
+### 3.5 Lancer le serveur de développement

@@ -1,0 +1,3 @@
+> Vous pouvez ajouter `gunicorn` pour le serveur de production, `psycopg2-binary` si vous passez à PostgreSQL, etc.
+
+### 3.3 (Optionnel) Fichier `.flaskenv` – Variables d’environnement
