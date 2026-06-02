@@ -1,2 +1,5 @@
-# mindusx.github.io
-le prime
+---
+
+## 3️⃣ Installation & lancement
+
+### 3.1 Créer l’environnement virtuel
