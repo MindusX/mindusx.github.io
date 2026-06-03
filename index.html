@@ -1,36 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Flask Example{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1><a href="{{ url_for('main.index') }}">Flask Example</a></h1>
-        <nav>
-            <a href="{{ url_for('main.index') }}">Accueil</a>
-            <a href="{{ url_for('main.item_list') }}">Liste d'items</a>
-            <a href="{{ url_for('main.item_create') }}">Nouvel item</a>
-        </nav>
+        <h1>Bienvenue sur Mon Site</h1>
+        <p>Une page d'exemple pour montrer un exemple complet</p>
     </header>
 
-    <main>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul class="flash-messages">
-              {% for category, msg in messages %}
-                <li class="{{ category }}">{{ msg }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
+    <nav>
+        <a href="#section1">Accueil</a>
+        <a href="#section2">À propos</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        {% block content %}{% endblock %}
-    </main>
+    <div class="container">
+        <section id="section1">
+            <h2>À propos de nous</h2>
+            <p>Ce site est conçu pour vous offrir des informations utiles et des ressources complètes.</p>
+        </section>
+
+        <section id="section2">
+            <h2>Nos Services</h2>
+            <ul>
+                <li>Conseils pour le développement web</li>
+                <li>Formation en ligne</li>
+                <li>Conception de sites web</li>
+            </ul>
+        </section>
+
+        <section id="section3">
+            <h2>Contact</h2>
+            <p>N'hésitez pas à nous contacter si vous avez des questions.</p>
+            <form>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div>
 
     <footer>
-        <p>&copy; {{ 2025 }} Flask Example</p>
+        <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
